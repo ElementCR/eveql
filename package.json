@@ -1,0 +1,14 @@
+{
+  "name": "eveql-master",
+  "version": "1.0.0",
+  "description": "This is created in attempts to gain more solid understanding with Node.JS, MySQL, and Angular2.js",
+  "main": "materialFinder.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.13.0"
+  }
+}
