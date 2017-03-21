@@ -9,7 +9,7 @@ function mFinder(callback) {
 	var connection = mysql.createConnection({
 		host: "localhost",
 		user: "root",
-		password: "Ishtar842"
+		password: ""
 	});
 
 	connection.connect(function (err) {
@@ -58,7 +58,7 @@ mFinder(function (listData) {
 		var connection = mysql.createConnection({
 			host: "localhost",
 			user: "root",
-			password: "Ishtar842"
+			password: ""
 		});
 
 		connection.connect(function (err) {
