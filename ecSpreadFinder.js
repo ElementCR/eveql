@@ -42,8 +42,8 @@ http.request(options, function (res) {
 
     itemStats.hiBuy = buy["max"];
     itemStats.loSel = sell["min"];
-    itemStats.iskSpread = itemStats.hiBuy - itemStats.loSel;
-    itemStats.perSpread = itemStats.iskSpread / itemStats.hiBuy;
+    itemStats.iskSpread = itemStats.loSel - itemStats.hiBuy; //Adjusted the spread calculation for station trading.
+    itemStats.perSpread = itemStats.iskSpread / itemStats.loSel;
     itemStats.buyVol = buy["volume"];
     itemStats.selVol = sell["volume"];
     itemStats.allVol = all["volume"];
