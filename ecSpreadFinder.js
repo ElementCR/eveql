@@ -19,7 +19,7 @@ var host = 'http://api.eve-central.com/api/marketstat'
 var options = {
   host: 'api.eve-central.com',
   port: 80,
-  path: '/api/marketstat/json?typeid=34&usessystem=30000142',
+  path: '/api/marketstat/json?typeid=34&usesystem=30000142',
   method: 'GET'
 }
 
