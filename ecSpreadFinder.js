@@ -1,5 +1,7 @@
 var querystring = require('querystring');
 var http = require('http');
+var fs = require('fs');
+
 var buy;
 var all;
 var sell;
@@ -11,7 +13,10 @@ var itemStats = {
   "selVol": 0,
   "allVol": 0,
   "iskSpread": 0,
-  "perSpread": 0
+  "perSpread": 0,
+  "buyPerHR": 0,
+  "selPerHR": 0,
+  "TORatio": 0
 }
 
 var host = 'http://api.eve-central.com/api/marketstat'
@@ -19,21 +24,21 @@ var host = 'http://api.eve-central.com/api/marketstat'
 var options = {
   host: 'api.eve-central.com',
   port: 80,
-  path: '/api/marketstat/json?typeid=34&usesystem=30000142',
+  path: '/api/marketstat/json?typeid=615&usesystem=30000142',
   method: 'GET'
 }
 
 http.request(options, function (res) {
-  console.log('STATUS: ' + res.statusCode);
-  console.log('HEADERS: ' + JSON.stringify(res.headers));
+  //console.log('STATUS: ' + res.statusCode);
+  //console.log('HEADERS: ' + JSON.stringify(res.headers));
   res.setEncoding('utf8');
   res.on('data', function (chunk) {
     console.log('BODY: ' + chunk);
-    var jsonBuy = JSON.parse(chunk);
+    var payload = JSON.parse(chunk);
 
-    buy = jsonBuy[0]["buy"];
-    all = jsonBuy[0]["all"];
-    sell = jsonBuy[0]["sell"];
+    buy = payload[0]["buy"];
+    all = payload[0]["all"];
+    sell = payload[0]["sell"];
 
     //console.log("buy Xfer :: " + JSON.stringify(buy));
     //console.log("all Xfer :: " + JSON.stringify(all));
@@ -47,8 +52,19 @@ http.request(options, function (res) {
     itemStats.buyVol = buy["volume"];
     itemStats.selVol = sell["volume"];
     itemStats.allVol = all["volume"];
+    itemStats.buyPerHR = itemStats.buyVol / 24;
+    itemStats.selPerHR = itemStats.selVol / 24;
+    itemStats.TORatio = itemStats.selPerHR / itemStats.buyPerHR;
 
     console.log("Transferred Values" + JSON.stringify(itemStats));
+
+    fs.writeFile("economicData.txt", JSON.stringify(itemStats), function (err) {
+      if (err) {
+        return console.log(err);
+      }
+      console.log("The file was saved!");
+    });
+
 
   });
 }).end();
