@@ -21,6 +21,9 @@ I've created a Kanban board for objectives and goals in order to gauge progress 
 Contact me to be added to the Kanban board, and for information regarding the Discord Server for more open communication.
 
 <B>4/3/2017 -</B>
+Over the weekend I was able to make a solid breakthrough in both the database and processing for economic data found within the eve_economy table. ecSpreadFinder.js has been completed to a degree, albeit some problems with the data and the service we are using. Some exception handling needs to be put in place for the response related to items that are non-marketable within the database. I'll also be removing any non-marketable items from the database, along with items that have 0 economic value after a full iteration of economic processing.
+
+Feel free to post any suggestions for the algorithm and error handling.
 
 _____________________________________________________________________________
 The economic data will be retrieved from api.eve-central.com.
