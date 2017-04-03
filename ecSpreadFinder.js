@@ -59,8 +59,8 @@ function lookup() {
 function openConnection(next) {
     var conn = mysql.createConnection({
         host: "localhost",
-        user: "root",
-        password: "Ishtar842",
+        user: "",
+        password: "",
         database: 'eveql'
     });
 
