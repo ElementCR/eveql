@@ -19,6 +19,9 @@ I've deferred from using Sequelizer for now until I can test the speed differenc
 
 I've created a Kanban board for objectives and goals in order to gauge progress and create an atmosphere of community. 
 Contact me to be added to the Kanban board, and for information regarding the Discord Server for more open communication.
+
+<B>4/3/2017 -</B>
+
 _____________________________________________________________________________
 The economic data will be retrieved from api.eve-central.com.
 
