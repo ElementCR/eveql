@@ -8,8 +8,8 @@ function mFinder(callback) {
 	// First you need to create a connection to the db
 	var connection = mysql.createConnection({
 		host: "localhost",
-		user: "root",
-		password: "Ishtar842"
+		user: "",
+		password: ""
 	});
 
 	connection.connect(function (err) {
