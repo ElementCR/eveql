@@ -23,6 +23,12 @@ Contact me to be added to the Kanban board, and for information regarding the Di
 <B>4/3/2017 -</B>
 Over the weekend I was able to make a solid breakthrough in both the database and processing for economic data found within the eve_economy table. ecSpreadFinder.js has been completed to a degree, albeit some problems with the data and the service we are using. Some exception handling needs to be put in place for the response related to items that are non-marketable within the database. I'll also be removing any non-marketable items from the database, along with items that have 0 economic value after a full iteration of economic processing.
 
+<B>4/10/2017 -</B>
+Greetings fellow developers and pilots!
+This week's efforts will be focused on organizing and cleaning up the JSON data constructs for the materialFinder.js and integrating the application for that on the web server as a restful service using the GET method. Once this is accomplished, some fine tuning will be done with some other inputs to adjust the actual required materials as we take into account the blueprint efficiencies and structure material bonuses for manufacturing items within the game. 
+
+Anything after that will be geared towards the web app so users can interact with the service. Fly Safely. o7
+
 Feel free to post any suggestions for the algorithm and error handling.
 
 _____________________________________________________________________________
